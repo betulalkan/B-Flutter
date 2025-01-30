@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../core/constants.dart';
 import '../core/themes.dart';
+import '../main.dart';
 import '../widgets/bottom_menu.dart';
 import '../widgets/suggested_action_card.dart';
 
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onPrimary,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,

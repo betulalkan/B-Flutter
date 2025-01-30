@@ -139,7 +139,7 @@ lib/
 
 ## Ekran Görüntüleri
 
-[Uygulama ekran görüntüleri buraya eklenecek]
+![](<assets/images/Ekran Resmi 2025-01-30 22.46.21.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.46.29.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.05.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.21.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.32.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.53.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.59.06.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.59.16.png>) 
 
   
 
