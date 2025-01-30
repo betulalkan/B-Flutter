@@ -1,7 +1,14 @@
-//ana ekran
-
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+
+import '../core/constants.dart';
+import '../core/themes.dart';
+import '../widgets/bottom_menu.dart';
+import '../widgets/suggested_action_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,93 +16,127 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // AppBar
       appBar: AppBar(
-        title: const Text('Ana Sayfa'),
+        title: Text('FitLife', style: Theme.of(context).textTheme.headlineMedium),
+        centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.bell),
-            onPressed: () {},
+            icon: Icon(CupertinoIcons.moon), // Ay ikonu eklendi
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
           ),
         ],
       ),
-
-            // Yan menü (Drawer)
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        child: Column(
           children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 10, 146, 5),
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      CupertinoIcons.person_circle,
-                      size: 60,
-                      color: Color.fromARGB(255, 10, 146, 5),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Hoşgeldiniz!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+              accountName: Text("Hoşgeldiniz"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.home),
-              title: const Text('Ana Sayfa'),
+              leading: Icon(CupertinoIcons.home),
+              title: Text('Ana Sayfa'),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.heart),
-              title: const Text('Favoriler'),
-              onTap: () {},
+              leading: Icon(CupertinoIcons.search),
+              title: Text('Arama Geçmişi'),
+              onTap: () => context.push("/search"),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
-              onTap: () {},
+              leading: Icon(CupertinoIcons.settings, color: Theme.of(context).colorScheme.onSurface),
+              title: Text('Ayarlar', style: Theme.of(context).textTheme.bodyMedium),
+              onTap: () => context.push("/settings"),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.info),
-              title: const Text('Hakkında'),
-              onTap: () {},
+              leading: Icon(CupertinoIcons.heart),
+              title: Text('Favorilerim'),
+              onTap: () => context.push("/favorites"),
+            ),
+            Spacer(),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Çıkış Yap'),
+              onTap: () => context.go("/login"),
             ),
           ],
         ),
       ),
-      // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Keşfet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
-            label: 'Profil',
-          ),
-        ],
-        onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
-        },
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(24),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: DotLottieLoader.fromAsset(
+                    "assets/motions/h.lottie",
+                    frameBuilder: (context, dotlottie) {
+                      if (dotlottie != null) {
+                        return Lottie.memory(
+                          dotlottie.animations.values.single,
+                        );
+                      }
+                      return const SizedBox();
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                ),
+                child: ListView(
+                  padding: EdgeInsets.all(24),
+                  children: [
+                    SuggestedActionCard(
+                      icon: Icons.fitness_center,
+                      title: "Kişisel Antrenör",
+                      subtitle: "Antrenman tavsiyeleri alın",
+                      onTap: () => context.push("/chat"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.history,
+                      title: "Son Antrenmanlar",
+                      subtitle: "Geçmiş antrenman kayıtlarınızı inceleyin",
+                      onTap: () => context.push("/search"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.favorite,
+                      title: "Favori Egzersizler",
+                      subtitle: "Sevdiğiniz antrenmanları kaydedin",
+                      onTap: () => context.push("/favorites"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }
