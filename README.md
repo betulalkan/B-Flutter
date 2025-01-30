@@ -140,6 +140,8 @@ lib/
 ## Ekran Görüntüleri
 
 [Uygulama ekran görüntüleri buraya eklenecek]
+[
+](https://github.com/user-attachments/assets/da132df0-c845-4ace-8865-827afb09fabb)
 
   
 
