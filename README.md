@@ -131,14 +131,6 @@ lib/
 ![alt text](<assets/images/Ekran Resmi 2025-01-31 14.04.53.png>)
 ![alt text](<assets/images/Ekran Resmi 2025-01-31 14.05.18.png>).   
 
-<<<<<<< HEAD
-  [
-](https://github.com/user-attachments/assets/11b1f7c5-3578-4761-84b2-566b42938485)
-  
-=======
-[Uygulama ekran görüntüleri buraya eklenecek]
-
->>>>>>> fd3f0a31b60bc94a00848fcc04843a74c576431b
 
   [
 ](https://github.com/user-attachments/assets/11b1f7c5-3578-4761-84b2-566b42938485)
