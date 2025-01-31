@@ -1,5 +1,4 @@
-
-# Flutter Projesi
+# FitLife
 
   
 
@@ -10,6 +9,8 @@
 ## Proje Hakkında
 
 FitLife, kullanıcıların fiziksel sağlık hedeflerini yönetebilmelerini, kişisel antrenman planları oluşturabilmelerini ve dengeli bir diyet programını takip edebilmelerini sağlayan bir mobil uygulamadır. Sağlık ve fitness alanında daha verimli bir yaşam sürmek isteyenler için kapsamlı araçlar sunar. 
+
+
 
   
 
@@ -22,34 +23,22 @@ Keyvan Arasteh [Github](https://github.com/keyvanarasteh)
 -  **Takım Üyeleri:**
 
 - Betül Alkan [GitHub](https://github.com/betulalkan)
-# Flutter Projesi
 
   
-
-![İstinye Üniversitesi](https://www.unitededucation.com/linklogoch/istinye-university-logo.png)
-  
-
-
-  
-
 ## Özellikler
+ 
+## Hedef Kitle 
 
-- Kullanıcı Kayıt/Giriş 
+Yaş Aralığı: 18-40 yaş arası 
+İlgi Alanları: Fitness, vücut geliştirme, sağlıklı yaşam, diyet ve spor 
 
-Kullanıcılar, e-posta ve şifre kullanarak kayıt olabilecek ve giriş yapabilecekler.
+## Kayıt ve Giriş Sistemi 
 
-- Gece/Gündüz Modu
+Kullanıcılar, e-posta adresiyle hesap oluşturup giriş yapabilirler. 
+Basit ve güvenli bir giriş süreci sunulur. 
 
-Kullanıcılar, uygulama hem gündüz hem de gece modu seçenekleri sunacak.
-
-- Cihaz Desteği
-
-Uygulama, hem mobil cihazlar (akıllı telefon ve tablet) hem de masaüstü bilgisayarlar için optimize edilecek.
-
-- Dil Desteği
-
-İngilizce ve Türkçe olmak üzere iki dil desteklenecek.
-  
+## Dil Seçeneği 
+Uygulama Türkçe ve İngilizce dil seçeneklerine sahiptir, bu sayede geniş bir kullanıcı kitlesine hitap eder. 
 
 ## Kullanılan Teknolojiler
 
@@ -57,21 +46,17 @@ Uygulama, hem mobil cihazlar (akıllı telefon ve tablet) hem de masaüstü bilg
 
 - Dart
 
-- [Diğer teknolojiler]
-
-  
-
 ## Başlangıç
 
   
 
 ### Gereksinimler
 
-- Flutter SDK (sürüm X.X.X)
+- Flutter SDK (sürüm 3.24.5)
 
-- Dart SDK (sürüm X.X.X)
+- Dart SDK (sürüm 3.5.4)
 
-- [Diğer gerekli yazılımlar]
+- VS Code (sürüm 1.95.3)
 
   
 
@@ -81,7 +66,7 @@ Uygulama, hem mobil cihazlar (akıllı telefon ve tablet) hem de masaüstü bilg
 
 ```bash
 
-git  clone [betulalkan/B-Flutter]
+git clone mervecetiin/M-Flutter
 
 ```
 
@@ -91,7 +76,7 @@ git  clone [betulalkan/B-Flutter]
 
 ```bash
 
-cd [FitLıfe]
+cd Fungipedia
 
 ```
 
@@ -101,7 +86,7 @@ cd [FitLıfe]
 
 ```bash
 
-flutter  pub  get
+flutter pub get
 
 ```
 
@@ -111,7 +96,7 @@ flutter  pub  get
 
 ```bash
 
-flutter  run
+flutter run
 
 ```
 
@@ -123,13 +108,13 @@ flutter  run
 
 lib/
 
-├── modeller/ # Veri modelleri
+├── core/ # Veri modelleri
 
-├── ekranlar/ # Uygulama ekranları
+├── screens/ # Uygulama ekranları
 
 ├── widgets/ # Tekrar kullanılabilir arayüz öğeleri
 
-├── servisler/ # API servisleri
+├── services/ # API servisleri
 
 └── yardımcılar/ # Yardımcı fonksiyonlar
 
@@ -138,9 +123,16 @@ lib/
   
 
 ## Ekran Görüntüleri
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.03.05.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.03.32.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.03.52.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.04.10.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.04.31.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.04.53.png>)
+![alt text](<assets/images/Ekran Resmi 2025-01-31 14.05.18.png>).   
 
-![](<assets/images/Ekran Resmi 2025-01-30 22.46.21.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.46.29.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.05.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.21.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.32.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.48.53.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.59.06.png>) ![](<assets/images/Ekran Resmi 2025-01-30 22.59.16.png>) 
-
+  [
+](https://github.com/user-attachments/assets/11b1f7c5-3578-4761-84b2-566b42938485)
   
 
 ## Projeye Katkı Sağlama
@@ -159,7 +151,7 @@ lib/
 
 ## Lisans
 
-[Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
+MIT kapsamında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
 
   
 
@@ -173,9 +165,4 @@ lib/
 
 ## Teşekkürler
 
-- İstinye Üniversitesi'ne destekleri için teşekkür ederiz.
-
-
-  
-  
-
+- İstinye Üniversitesi'ne destekleri için teşekkür ederiz
