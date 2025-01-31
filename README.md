@@ -140,11 +140,10 @@ lib/
 ## Ekran Görüntüleri
 
 [Uygulama ekran görüntüleri buraya eklenecek]
-[
-](https://github.com/user-attachments/assets/da132df0-c845-4ace-8865-827afb09fabb)
 
-  
 
+  [
+](https://github.com/user-attachments/assets/11b1f7c5-3578-4761-84b2-566b42938485)
 ## Projeye Katkı Sağlama
 
 1. Projeyi forklayın
